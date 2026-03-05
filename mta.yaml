@@ -4,8 +4,9 @@ general:
   integrationFlowId: "Test_Tenant"
 stages:
   Upload:
-    enabled: false
+    enabled: true
   Deploy:
-    enabled: false
+    enabled: true
   Integration Test:
     enabled: false
+
