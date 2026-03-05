@@ -1,0 +1,16 @@
+_schema-version: "3.2.0"
+ID: my.app
+modules:
+  - name: my-ui
+    type: sap.html5.application
+    path: app/ui
+    build-parameters: {builder: custom, commands: [npm install, npm run build]}
+    requires: [{name: html5-repo-host}]
+  - name: my-backend
+    type: nodejs
+    path: backend
+    provides: [api]
+resources:
+  - name: html5-repo-host
+    type: org.cloudfoundry.managed-service
+    parameters: {service: html5-apps-repo, service-plan: app-host}
